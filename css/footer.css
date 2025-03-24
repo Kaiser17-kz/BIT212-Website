@@ -1,0 +1,53 @@
+/* Basic Footer Styling */
+.footer {
+  background-color: #333; /* Dark background color */
+  color: #FFB381; /* White text color */
+  padding: 20px;
+  text-align: center;
+  font-family: Quicksand;
+}
+
+/* Footer Content Layout */
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px;
+  min-width: 200px; /* Ensure items stack on smaller screens */
+  text-align: left;
+}
+
+.footer-section img {
+  margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section h3 {
+  margin: 0;
+  padding: 5px 0;
+}
+
+/* Copyright Section */
+.footer-copyright {
+  padding-top: 20px;
+  font-size: 0.9em;
+  color: #aaa; /* Light gray text color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-section {
+      text-align: center;
+  }
+}
