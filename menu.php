@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Caf&eacute; Menu</title>
+<title>Cafe; Menu</title>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/menu.css">
 </head>
@@ -11,7 +11,7 @@
 
 	<div id="header" class="mainHeader">
 		<hr>
-		<div class="center">Se& Caf&eacute;</div>
+		<div class="center">Aldenaire Cafe</div>
 	</div>
 	<br>
 	<?php
