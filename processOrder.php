@@ -101,7 +101,7 @@ for ($i = 0; $i < sizeof($amounts); $i++) {
 
 $conn->close();
 ?>
-	<p class="center">Thank for your order! It will be available for pickup
+	<p class="center">Thank you for your order! Order will be available for pickup
 		within 15 minutes. Your order number and details are shown below.</p>
 
 <?php
