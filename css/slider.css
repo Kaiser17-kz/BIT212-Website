@@ -11,7 +11,7 @@
 
 /* Container for the slides */
 .slides {
-  display: flex;
+  display: block ruby;
   height: 100%;
   width: 100%; /* Width of all images combined */
   animation: slideAnimation 16s infinite;
