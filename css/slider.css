@@ -11,7 +11,7 @@
 
 /* Container for the slides */
 .slides {
-  display: block ruby;
+  display: flex;
   height: 100%;
   width: 100%; /* Width of all images combined */
   animation: slideAnimation 16s infinite;
@@ -35,3 +35,19 @@
 .slider:hover .slides {
   animation-play-state: paused; /* Pause on hover */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
