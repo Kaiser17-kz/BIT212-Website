@@ -1,0 +1,36 @@
+/* Style the slider */
+.slider {
+  width: 100%; /* Full-width */
+  overflow: hidden; /* Hide anything outside the container */
+  position: relative;
+  max-width: 1200px; /* Set a maximum width */
+  margin: auto;
+  height: 500px;
+  border: 2px solid #ddd; /* Optional border for better visibility */
+}
+
+/* Container for the slides */
+.slides {
+  display: flex;
+  width: 100%; /* Width of all images combined */
+  animation: slideAnimation 16s infinite;
+}
+
+/* Each slide image */
+.slides img {
+  width: 100%; /* Full width of the slider */
+  height: 100%;
+  transition: transform 0.5s ease; /* Smooth transition */
+}
+
+/* Keyframes for the sliding effect */
+@keyframes slideAnimation {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
+.slider:hover .slides {
+  animation-play-state: paused; /* Pause on hover */
+}
