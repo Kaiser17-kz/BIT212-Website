@@ -1,4 +1,7 @@
 <?php
+include 'config.php';
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Database connection
     $servername = "localhost:3306";
