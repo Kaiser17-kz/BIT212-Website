@@ -31,7 +31,7 @@
 		<a href="menu.php">Menu</a>
 		<a href="orderHistory.php">Order History</a>
 		<a href="addMenu.html">Add Menu</a>
-		<a href="deleteRecord.php">Delete Record</a>
+		<a href="deleteMenu.php">Delete Record</a>
 	</div>
 	<hr>
 	<div id="mainContent">

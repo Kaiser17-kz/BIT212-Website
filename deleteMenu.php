@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Product</title>
+    <title>Delete Record</title>
     <link rel="stylesheet" href="css/styles.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+						integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
     
+
 </head>
-<body>
+<body class="bodyStyle" style="background-color: #F8F5E9;">
     <div id="header" class="mainHeader">
-		<hr>
-		<div><img src="images/secret_receipe.png" height=auto width="250px"></div>
-		<div class="center">Se&cacute;ret Receipe Caf&eacute;</div>
-		
+		<div><img src="images/butter_olive.webp" height=auto width="250px"></div>
+		<div style="padding-top: 50px;">Butter & Olive Cafe</div>
 	</div>
-    <hr><hr>
-	<div class="topnav">
-		<a href="index.php">Home</a>
-		<a href="#aboutUs">About Us</a>
-		<a href="#contactUs">Contact Us</a>
+
+    <hr>
+    <div class="topnav">
+		<a href="index.html">Home</a>
 		<a href="menu.php">Menu</a>
 		<a href="orderHistory.php">Order History</a>
 		<a href="addMenu.html">Add Menu</a>
-		<a href="deleteMenu.php">Delete Menu</a>
+		<a href="deleteMenu.php">Delete Record</a>
 	</div>
-	<hr>
-    <div id="header" class="mainHeader">
-        <h1>Delete Product</h1>
-    </div>
+    <hr>
+    <br>
 
-    <?php
+<h2>Delete a Product</h2>
+
+<?php
         include 'config.php';
 
         // Create a connection to the database
@@ -67,5 +69,31 @@
 
         $conn->close();
     ?>
+
+<br><br>
+
+
 </body>
+
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Logo and Contact Information -->
+        <div class="footer-section logo-contact">
+            <img src="images/butter_olive.webp" alt="Butter & Olive Logo" width="120">
+            <p>12, Jalan Hujan Emas 4, Taman Overseas Union, 58200 <br>Kuala Lumpur, Malaysia <br><br>Tel: +1-800-555-0193</p>
+        </div>
+        
+        <!-- Opening Hours -->
+        <div class="footer-section hours">
+            <h3>Opening Hours</h3>
+            <p>8:00am - 9:30pm<br>Closed on Public Holidays!</p>
+        </div>
+    </div>
+    
+    <!-- Copyright Section -->
+    <div class="footer-copyright">
+        <p>&copy; 2025, Butter & Olive, Inc. or its Affiliates. All rights reserved.</p>
+    </div>
+</footer>
+
 </html>

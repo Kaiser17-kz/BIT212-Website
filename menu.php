@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Butter & Olive Caf&eacute; Menu</title>
+<title>Secret Recipe Caf&eacute; Menu</title>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/menu.css">
 </head>
@@ -11,42 +11,44 @@
 
 	<div id="header" class="mainHeader">
 		<hr>
-		<div><img src="images/butter_olive.webp" height=auto width="250px"></div>
-		<div class="center">Butter & Olive Caf&eacute;</div>
+		<div><img src="images/secret_receipe.png" height=auto width="250px"></div>
+		<div class="center">Secret Recipe Caf&eacute;</div>
 	</div>
 	<br>
 	<?php
-		
-		include('config.php');
+		// Get the application environment parameters from the Parameter Store.
+		//include ('getAppParameters.php');
+
+		// Display the server metadata information if the showServerInfo parameter is true.
+		//include('serverInfo.php');
+
+		include 'config.php';
+
 	?>
 	<hr>
 	<div class="topnav">
 		<a href="index.php">Home</a>
-		<a href="menu.php">Menu</a>
+		<a href="menu.php" class="active">Menu</a>
 		<a href="orderHistory.php">Order History</a>
-		<a href="addMenu.html">Add Menu</a>
-		<a href="deleteRecord">Delete Record</a>
 	</div>
-	<hr>
 
 <?php
-
 // Create a connection to the database.
-
+include 'config.php';
 $conn = new mysqli($db_url, $db_user, $db_password, $db_name);
-
-// Check the connection.
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
+
 // Get all rows from the product table.
 
-$sql = "SELECT a.id, a.product_name, a.description, a.price, b.product_group_number, b.product_group_name, a.image_url
-        FROM product a, product_group b
-        WHERE b.product_group_number = a.product_group
-        ORDER BY b.product_group_number, a.id";
+$sql = "SELECT a.id, a.product_name, a.description, a.price, b.product_group, b.product_group_name, a.image_url
+        FROM product a, productgroup b
+        WHERE b.product_group = a.product_group
+        ORDER BY b.product_group, a.id";
 
 $result = $conn->query($sql);
 
@@ -55,6 +57,7 @@ $numOfItems = $result->num_rows;
 if ($numOfItems > 0) {
 
     // Display each returned item in a form.
+		echo '<body class="bodyStyle" style="background-color: #FFF5CD;">';
 
 	echo '<form id="orderForm" action="processOrder.php" method="post" onsubmit="return validateOrder()">';
 
@@ -63,21 +66,21 @@ if ($numOfItems > 0) {
 	// output data of each row
 	while($row = $result->fetch_assoc()) {
 
-	    if ($row["product_group_number"] != $previousProductGroupNumber) {
+	    if ($row["product_group"] != $previousProductGroupNumber) {
 
             echo '<hr>';
             echo '<div class="cursiveText">';
             echo '<p>' . $row["product_group_name"] . '</p>';
             echo '</div>';
 
-	        $previousProductGroupNumber = $row["product_group_number"];
+	        $previousProductGroupNumber = $row["product_group"];
 	    }
 
 	    $price = number_format($row["price"], 2);
 
 	    echo '	<div class="column">';
 	    echo '			<div class="card">';
-	    echo '				<img src="' . $row["image_url"] . '" style="width: 100%">';
+	    echo '				<img src="' . $row["image_url"] . '" style="width: 200px; height: 200px; object-fit: cover; display: block; margin: 0 auto ">';
 	    echo '				<div class="container">';
 	    echo '					<h2 class="productTitle">' . $row["product_name"] . '</h2>';
 	    echo '					<p class="center">' . $currency . $price . '</p>';
@@ -90,6 +93,7 @@ if ($numOfItems > 0) {
 	    echo '					</div>';
 	    echo '					<br>';
 	    echo '				</div>';
+			echo'<br>';
 	    echo '			</div>';
 	    echo '		</div>';
 
@@ -100,9 +104,12 @@ if ($numOfItems > 0) {
 	echo '		Order Total: ' . $currency . '<span id="orderTotal"></span>';
 	echo '	</p>';
 	echo '</div>';
+	//echo	'<form action="submitorder.php", method="post",entype="multipart/form-data">'				;
 	echo '<br> <input type="Submit" value="Submit Order" class="button">';
-	echo '<br> <br> <input type="Reset" value="Reset Order" class="button" onclick="resetForm()">';
 	echo '</form>';
+	echo	'<br>'				;
+	echo '<br> <br> <input type="Reset" value="Reset Order" class="button" onclick="resetForm()">';
+	echo'</body>';
 
 } else {
     echo '<br><p class="center">There are no items on the menu.</p>';
@@ -114,7 +121,7 @@ $conn->close();
 ?>
 
 	<div id="Copyright" class="center">
-		<h5>&copy; 2020, Amazon Web Services, Inc. or its Affiliates. All rights reserved.</h5>
+		<h5>&copy; 2024, Secret Recipe Cafe, Inc. or its Affiliates. All rights reserved.</h5>
 	</div>
 
 	<script>
@@ -180,7 +187,4 @@ $conn->close();
 	</script>
 
 </body>
-
-
-
 </html>
