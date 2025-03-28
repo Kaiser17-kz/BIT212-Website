@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Cafe; Menu</title>
+<title>Butter & Olive Caf&eacute; Menu</title>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/menu.css">
 </head>
@@ -11,7 +11,8 @@
 
 	<div id="header" class="mainHeader">
 		<hr>
-		<div class="center">Aldenaire Cafe</div>
+		<div><img src="images/butter_olive.webp" height=auto width="250px"></div>
+		<div class="center">Butter & Olive Caf&eacute;</div>
 	</div>
 	<br>
 	<?php

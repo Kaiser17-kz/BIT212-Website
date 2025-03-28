@@ -1,15 +1,9 @@
 <?php
 include 'config.php';
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Database connection
-    $servername = "localhost:3306";
-    $username = "root";
-    $password = "cafe"; // Update with your database password
-    $dbname = "cafe_db";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($db_url, $db_user, $db_password, $db_name);
 
     // Check connection
     if ($conn->connect_error) {
@@ -37,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $uploadOk = 0;
     }
 
-    // Check file size (limit to 5MB)
-    if ($_FILES["image"]["size"] > 5000000) {
+    // Check file size (limit to 10MB)
+    if ($_FILES["image"]["size"] > 10000000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
@@ -67,7 +61,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             VALUES ('$product_name', '$description', '$price', '$product_group', '$image_url')";
 
     if ($conn->query($sql) === TRUE) {
+        echo'<head>';
+        echo'<link rel="stylesheet" type="text/css" href="styles.css">';
+        echo'</head>';
+
+        echo'<body class="bodyStyle" style="background-color: #FFF5CD;">';
+        
+        echo'<hr>';
+	echo'<div class="topnav">';
+		echo'<a href="index.php">Home</a>';
+		echo'<a href="#aboutUs">About Us</a>';
+		echo'<a href="#contactUs">Contact Us</a>';
+		echo'<a href="menu.php">Menu</a>';
+		echo'<a href="orderHistory.php">Order History</a>';
+		echo'<a href="addMenu.html">Add Menu</a>';
+        echo'<a href="deleteMenu.php">Delete Menu</a>';
+	echo'</div>';
+	echo'<hr>';
+
+
         echo "New menu item added successfully!";
+        echo'</body>';
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

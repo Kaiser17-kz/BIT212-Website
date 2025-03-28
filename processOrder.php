@@ -15,10 +15,11 @@
 	<br>
 	<?php
 		// Get the application environment parameters from the Parameter Store.
-		include ('getAppParameters.php');
+		//include ('getAppParameters.php');
 
 		// Display the server metadata information if the showServerInfo parameter is true.
-		include('serverInfo.php');
+		//include('serverInfo.php');
+		include 'config.php';
 	?>
 	<hr>
 	<div class="topnav">

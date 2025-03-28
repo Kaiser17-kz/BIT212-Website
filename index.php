@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Butter & Olive Cafe</title>
+	<title>Butter & Olive Caf&eacute;</title>
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/slider.css">
 	<link rel="stylesheet" href="css/footer.css">
@@ -25,13 +25,13 @@
 	?>
 	<hr>
 	<div class="topnav">
-		<a href="index.html">Home</a>
+		<a href="index.php">Home</a>
 		<!--<a href="#aboutUs">About Us</a>-->
 		<!--<a href="#contactUs">Contact Us</a>-->
 		<a href="menu.php">Menu</a>
 		<a href="orderHistory.php">Order History</a>
 		<a href="addMenu.html">Add Menu</a>
-		<a href="deleteRecord.html">Delete Record</a>
+		<a href="deleteRecord.php">Delete Record</a>
 	</div>
 	<hr>
 	<div id="mainContent">
@@ -97,7 +97,7 @@
 			            class="card-img-top" alt="strawberry tart" />
 			          <div class="card-body" style="background-color: rgba(234, 216, 192, 0.6);">
 			            <div class="text-center mt-1">
-			              <h4 class="card-title">Our Tarts are always a customer favorite!</h4>
+			              <h4 class="card-title">Our Cake are always a customer favorite!</h4>
 			            </div>
 			          </div>
 			        </div>

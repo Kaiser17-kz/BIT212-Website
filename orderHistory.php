@@ -10,15 +10,16 @@
 
 	<div id="header" class="mainHeader">
 		<hr>
-		<div class="center">Caf&eacute;</div>
+		<div><img src="images/butter_olive.webp" height=auto width="250px"></div>
+		<div class="center">Butter & Olive Caf&eacute;</div>
 	</div>
 	<br>
 	<?php
 		// Get the application environment parameters from the Parameter Store.
-		include ('getAppParameters.php');
+		//include ('getAppParameters.php');
 
 		// Display the server metadata information if the showServerInfo parameter is true.
-		include('serverInfo.php');
+		include 'config.php';
 	?>
 	<hr>
 	<div class="topnav">
