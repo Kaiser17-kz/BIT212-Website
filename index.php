@@ -97,7 +97,7 @@
 			            class="card-img-top" alt="strawberry tart" />
 			          <div class="card-body" style="background-color: rgba(234, 216, 192, 0.6);">
 			            <div class="text-center mt-1">
-			              <h4 class="card-title">Our Cake are always a customer favorite!</h4>
+			              <h4 class="card-title">Our Tarts are always a customer favorite!</h4>
 			            </div>
 			          </div>
 			        </div>

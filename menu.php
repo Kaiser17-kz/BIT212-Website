@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Secret Recipe Caf&eacute; Menu</title>
+<title>Butter & Olive Caf&eacute; Menu</title>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/menu.css">
 </head>
@@ -10,9 +10,8 @@
 <body class="bodyStyle">
 
 	<div id="header" class="mainHeader">
-		<hr>
-		<div><img src="images/secret_receipe.png" height=auto width="250px"></div>
-		<div class="center">Secret Recipe Caf&eacute;</div>
+		<div><img src="images/butter_olive.webp" height=auto width="250px"></div>
+		<div class="center">Butter & Olive Caf&eacute;</div>
 	</div>
 	<br>
 	<?php
@@ -57,7 +56,7 @@ $numOfItems = $result->num_rows;
 if ($numOfItems > 0) {
 
     // Display each returned item in a form.
-		echo '<body class="bodyStyle" style="background-color: #FFF5CD;">';
+		echo '<body class="bodyStyle" style="background-color: ##F8F5E9;">';
 
 	echo '<form id="orderForm" action="processOrder.php" method="post" onsubmit="return validateOrder()">';
 
