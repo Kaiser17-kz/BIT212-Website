@@ -20,7 +20,7 @@
 
     <hr>
     <div class="topnav">
-		<a href="index.html">Home</a>
+		<a href="index.php">Home</a>
 		<a href="menu.php">Menu</a>
 		<a href="orderHistory.php">Order History</a>
 		<a href="addMenu.html">Add Menu</a>
