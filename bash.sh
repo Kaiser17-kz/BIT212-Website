@@ -67,15 +67,15 @@ CREATE TABLE order_item (
 
 
 INSERT INTO product (product_name, description, price, product_group, image_url) VALUES
-	  ('Black Forest', 'Fresh, Berry and Chocolate... Simply delicious!', 13.50, 1, 'images/black_forest.png')
-	, ('Choco Banana', 'We have more than half-a-dozen flavors!', 15.00, 1, 'images/choco_banana.png')
-	, ('Durian', 'Made with Malaysia Musang King with a touch of Madagascar vanilla', 22.50, 1, 'images/durian.png')
-	, ('Araibata Spagetti', 'Italy style pasta with  Tomato Sauce  ', 15.50, 3, 'images/araibata_spagetti.png')
-	, ('Marcaroni', 'Bursting taste with a Homemade secret Marcaroni sauce', 12.50, 3, 'images/marcaroni.png')
-  , ('Bolongnese', 'Made with france cheese and a delicious imported Pasta', 16.50, 3, 'images/bolognese.png')
-	, ('Coffee', 'Freshly-ground black or blended Columbian coffee', 6.00, 2, 'images/coffee.png')
-	, ('Tea', 'Rich flavour red tea from Cameron Highland', 5.00, 2, 'images/tea.png')
-	, ('Strawberry Soda', 'Strawberry juice with the sparking feels', 8.50, 2, 'images/strawberry.png');"
+	  ('Black Forest', 'Sweet, fruity, and chocolatey—pure indulgence!', 13.50, 1, 'images/black_forest.png')
+	, ('Choco Banana', 'We’ve got the perfect blend of chocolate and banana!', 15.00, 1, 'images/choco_banana.png')
+	, ('Vanila Cake', 'Made with Madagascar vanilla with a sweet scent of frostings', 22.50, 1, 'images/vanila.jpg')
+	, ('Araibata Spagetti', 'Italy style tomato pasta with thick sauce  ', 15.50, 3, 'images/araibata_spagetti.png')
+	, ('Marcaroni and Cheese', 'A rich and creamy delight with our secret homemade mac & cheese sauce!', 12.50, 3, 'images/marcaroni.png')
+  , ('Bolongnese', 'Made with rich Bolognese sauce and delicious imported pasta!', 16.50, 3, 'images/bolognese.png')
+	, ('Latte', 'Freshly brewed black or expertly blended Colombian coffee!', 6.00, 2, 'images/coffee.png')
+	, ('Tea', 'Elegant and full-bodied English tea, crafted to perfection!', 5.00, 2, 'images/tea.png')
+	, ('Strawberry Soda', 'Strawberry smoothie with the fresh strawberries', 8.50, 2, 'images/strawberry.png');"
 
 
 
