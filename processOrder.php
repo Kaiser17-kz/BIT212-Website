@@ -71,7 +71,7 @@ date_default_timezone_set($timeZone);
 
 $currentTimeStamp = date('Y-m-d H:i:s');
 
-$sql = "INSERT INTO `order` (order_date_time, amount) VALUES ('$currentTimeStamp', $totalAmount)";
+$sql = "INSERT INTO `ordertable` (order_date_time, amount) VALUES ('$currentTimeStamp', $totalAmount)";
 
 if ($conn->query($sql) === TRUE) {
     $orderNumber = $conn->insert_id;

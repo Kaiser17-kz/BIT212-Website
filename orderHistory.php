@@ -49,7 +49,7 @@ if ($conn->connect_error) {
 $sql = "SELECT a.order_number, a.order_date_time, a.amount as order_total,
                b.order_item_number, b.product_id, b.quantity, b.amount as item_amount,
                c.product_name, c.price
-        FROM `order` a, order_item b, product c
+        FROM `ordertable` a, order_item b, product c
         WHERE a.order_number = b.order_number
           AND c.id = b.product_id
         ORDER BY a.order_number DESC, b.order_item_number ASC";
