@@ -37,15 +37,15 @@ CREATE TABLE product (
 /* INSERT initialization data into the PRODUCT table. */
 
 INSERT INTO product (product_name, description, price, product_group, image_url) VALUES
-	  ('Black Forest', 'Fresh, Berry and Chocolate... Simply delicious!', 13.50, 1, 'images/black_forest.png')
+	  ('Black Forest', 'Fresh, fruity, and chocolaty... Simply irresistible!', 13.50, 1, 'images/black_forest.jpeg')
 	, ('Choco Banana', 'We have more than half-a-dozen flavors!', 15.00, 1, 'images/choco_banana.png')
-	, ('Durian', 'Made with Malaysia Musang King with a touch of Madagascar vanilla', 22.50, 1, 'images/durian.png')
-	, ('Araibata Spagetti', 'Italy style pasta with  Tomato Sauce  ', 15.50, 3, 'images/araibata_spagetti.png')
-	, ('Marcaroni', 'Bursting taste with a Homemade secret Marcaroni sauce', 12.50, 3, 'images/marcaroni.png')
-  , ('Bolongnese', 'Made with france cheese and a delicious imported Pasta', 16.50, 3, 'images/bolognese.png')
-	, ('Coffee', 'Freshly-ground black or blended Columbian coffee', 6.00, 2, 'images/coffee.png')
-	, ('Tea', 'Rich flavour red tea from Cameron Highland', 5.00, 2, 'images/tea.png')
-	, ('Strawberry Soda', 'Strawberry juice with the sparking feels', 8.50, 2, 'images/strawberry.png');
+	, ('Vanila Cake', 'Made with Madagascar vanilla with a sweet scent of frostings', 22.50, 1, 'images/vanila.jpg')
+	, ('Araibata Spagetti', 'Pasta in classic Italian tomato sauce.', 15.50, 3, 'images/araibata_spagetti.png')
+	, ('Marcaroni and cheese', 'Bursting with flavor, featuring a secret homemade mac & cheese sauce.', 12.50, 3, 'images/marcaroni.jpeg')
+  , ('Bolongnese', 'Crafted with creamy Swiss cheese and premium imported pasta', 16.50, 3, 'images/bolognese.png')
+	, ('Coffee', 'Freshly brewed black or expertly blended Ethiopian coffee.', 6.00, 2, 'images/coffee.png')
+	, ('Tea', 'Smooth and flavorful red tea from the misty hills of Sri Lanka.', 5.00, 2, 'images/tea.png')
+	, ('Strawberry Smoothie', 'Strawberry smoothie with the fresh strawberries', 8.50, 2, 'images/strawberry.png');
 
 /* Create ORDER table. */
 
