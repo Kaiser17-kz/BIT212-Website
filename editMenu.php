@@ -53,14 +53,14 @@ $conn->close();
         <a href="orderHistory.php">Order History</a>
         <a href="addMenu.html">Add Menu</a>
         <a href="deleteMenu.php">Delete Record</a>
-        <a href="editMenuForm.php">Edit Record</a>
+        <a href="editMenu.php">Edit Record</a>
     </div>
     <hr>
 
     <h2>Edit Menu Item</h2>
 
     <!-- Dropdown -->
-    <form method="get" action="editMenuForm.php">
+    <form method="get" action="editMenu.php">
         <label for="id">Select Product to Edit:</label>
         <select name="id" id="id" onchange="this.form.submit()" required>
             <option value="">-- Select Product --</option>
