@@ -10,6 +10,25 @@
 					integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   
 </head>
+
+<body class="bodyStyle" style="background-color: #F8F5E9;">
+    <div id="header" class="mainHeader">
+		<div><img src="images/butter_olive.webp" height=auto width="250px"></div>
+		<div style="padding-top: 50px;">Butter & Olive Cafe</div>
+	</div>
+
+    <hr>
+    <div class="topnav">
+		<a href="index.php">Home</a>
+		<a href="menu.php">Menu</a>
+		<a href="orderHistory.php">Order History</a>
+		<a href="addMenu.html">Add Menu</a>
+		<a href="deleteMenu.php">Delete Record</a>
+        <a href="editMenu.php">Edit Record</a>
+	</div>
+    <hr>
+    <br>
+
 <?php
 
 include 'config.php';
@@ -56,6 +75,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product_name'])) {
     echo "</body>";
 }
 ?>
+
+</body>
 
 <br>
 <a href="menu.php">Back to Menu</a>
