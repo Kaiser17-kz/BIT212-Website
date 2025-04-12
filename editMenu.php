@@ -6,20 +6,20 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Get all products for dropdown
+// Fetch product list
 $product_list = [];
-$sql = "SELECT product_id, product_name FROM product";
+$sql = "SELECT id, product_name FROM product";
 $result = $conn->query($sql);
 while ($row = $result->fetch_assoc()) {
     $product_list[] = $row;
 }
 
-// Get product details if ID is selected
+// Get selected product details
 $product = null;
 if (isset($_GET['id'])) {
-    $product_id = $_GET['id'];
-    $stmt = $conn->prepare("SELECT * FROM product WHERE product_id = ?");
-    $stmt->bind_param("i", $product_id);
+    $id = $_GET['id'];
+    $stmt = $conn->prepare("SELECT * FROM product WHERE id = ?");
+    $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
     $product = $result->fetch_assoc();
@@ -33,6 +33,7 @@ $conn->close();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Menu Item</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -52,18 +53,19 @@ $conn->close();
         <a href="orderHistory.php">Order History</a>
         <a href="addMenu.html">Add Menu</a>
         <a href="deleteMenu.php">Delete Record</a>
+        <a href="editMenuForm.php">Edit Record</a>
     </div>
     <hr>
 
     <h2>Edit Menu Item</h2>
 
-    <!-- Dropdown to select product -->
-    <form method="get" action="editMenu.php">
-        <label for="id">Choose a product to edit:</label>
+    <!-- Dropdown -->
+    <form method="get" action="editMenuForm.php">
+        <label for="id">Select Product to Edit:</label>
         <select name="id" id="id" onchange="this.form.submit()" required>
             <option value="">-- Select Product --</option>
             <?php foreach ($product_list as $item): ?>
-                <option value="<?= $item['product_id'] ?>" <?= isset($product_id) && $product_id == $item['product_id'] ? 'selected' : '' ?>>
+                <option value="<?= $item['id'] ?>" <?= isset($id) && $id == $item['id'] ? 'selected' : '' ?>>
                     <?= htmlspecialchars($item['product_name']) ?>
                 </option>
             <?php endforeach; ?>
@@ -73,9 +75,8 @@ $conn->close();
     <br>
 
     <?php if ($product): ?>
-    <!-- Pre-filled edit form -->
-    <form action="addMenu.php" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['product_id']) ?>">
+    <form action="updateMenu.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?= $product['id'] ?>">
 
         <label for="product_name">Product Name:</label><br>
         <input type="text" id="product_name" name="product_name" value="<?= htmlspecialchars($product['product_name']) ?>" required><br><br>
@@ -84,7 +85,7 @@ $conn->close();
         <textarea id="description" name="description" rows="4" required><?= htmlspecialchars($product['description']) ?></textarea><br><br>
 
         <label for="price">Price:</label><br>
-        <input type="number" step="0.01" id="price" name="price" value="<?= htmlspecialchars($product['price']) ?>" required><br><br>
+        <input type="number" step="0.01" id="price" name="price" value="<?= $product['price'] ?>" required><br><br>
 
         <label for="product_group">Product Group:</label><br>
         <select id="product_group" name="product_group" required>
@@ -104,21 +105,22 @@ $conn->close();
     </form>
     <?php endif; ?>
 
+    <hr>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section logo-contact">
+                <img src="images/butter_olive.webp" alt="Butter & Olive Logo" width="120">
+                <p>12, Jalan Hujan Emas 4, Taman Overseas Union, 58200 <br>Kuala Lumpur, Malaysia <br><br>Tel: +1-800-555-0193</p>
+            </div>
+
+            <div class="footer-section hours">
+                <h3>Opening Hours</h3>
+                <p>8:00am - 9:30pm<br>Closed on Public Holidays!</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025, Butter & Olive, Inc. or its Affiliates. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
-<hr>
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-section logo-contact">
-            <img src="images/butter_olive.webp" alt="Butter & Olive Logo" width="120">
-            <p>12, Jalan Hujan Emas 4, Taman Overseas Union, 58200 <br>Kuala Lumpur, Malaysia <br><br>Tel: +1-800-555-0193</p>
-        </div>
-        <div class="footer-section hours">
-            <h3>Opening Hours</h3>
-            <p>8:00am - 9:30pm<br>Closed on Public Holidays!</p>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <p>&copy; 2025, Butter & Olive, Inc. or its Affiliates. All rights reserved.</p>
-    </div>
-</footer>
 </html>
