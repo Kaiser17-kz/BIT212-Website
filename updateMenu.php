@@ -1,3 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Menu Item</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/footer.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+					integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+</head>
+
+<body class="bodyStyle" style="background-color: #F8F5E9;">
+    <div id="header" class="mainHeader">
+		<div><img src="images/butter_olive.webp" height=auto width="250px"></div>
+		<div style="padding-top: 50px;">Butter & Olive Cafe</div>
+	</div>
+
+    <hr>
+    <div class="topnav">
+		<a href="index.php">Home</a>
+		<a href="menu.php">Menu</a>
+		<a href="orderHistory.php">Order History</a>
+		<a href="addMenu.html">Add Menu</a>
+		<a href="deleteMenu.php">Delete Record</a>
+        <a href="editMenu.php">Edit Record</a>
+	</div>
+    <hr>
+    <br>
+
 <?php
 include 'config.php';
 
@@ -59,17 +90,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo '</head>';
 
         echo '<body class="bodyStyle" style="background-color: #FFF5CD;">';
-        echo '<hr>';
-        echo '<div class="topnav">';
-        echo '<a href="index.php">Home</a>';
-        echo '<a href="#aboutUs">About Us</a>';
-        echo '<a href="#contactUs">Contact Us</a>';
-        echo '<a href="menu.php">Menu</a>';
-        echo '<a href="orderHistory.php">Order History</a>';
-        echo '<a href="addMenu.html">Add Menu</a>';
-        echo '<a href="deleteMenu.php">Delete Menu</a>';
-        echo '</div>';
-        echo '<hr>';
 
         echo "<h3>Menu item updated successfully!</h3>";
         echo '</body>';
@@ -81,3 +101,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conn->close();
 }
 ?>
+
+</body>
+
+<br>
+<a href="menu.php">Back to Menu</a>
+<hr>
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Logo and Contact Information -->
+        <div class="footer-section logo-contact">
+            <img src="images/butter_olive.webp" alt="Butter & Olive Logo" width="120">
+            <p>12, Jalan Hujan Emas 4, Taman Overseas Union, 58200 <br>Kuala Lumpur, Malaysia <br><br>Tel: +1-800-555-0193</p>
+        </div>
+        
+        <!-- Opening Hours -->
+        <div class="footer-section hours">
+            <h3>Opening Hours</h3>
+            <p>8:00am - 9:30pm<br>
+               Closed on Public Holidays!</p>
+        </div>
+    </div>
+    
+    <!-- Copyright Section -->
+    <div class="footer-copyright">
+        <p>&copy; 2025, Butter & Olive, Inc. or its Affiliates. All rights reserved.</p>
+    </div>
+</footer>
+
+
+</html>

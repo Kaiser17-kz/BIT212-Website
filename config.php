@@ -5,5 +5,5 @@ $db_password = getenv('DB_PASSWORD') ?: 'cafe';
 $db_name = getenv('DB_NAME') ?: 'CAFE';
 $currency = getenv('CURRENCY') ?: '$';
 $timeZone = getenv('TIME_ZONE') ?: 'Asia/Kuala_Lumpur';
-$server_url=getenv('SERVER_URL') ?: 'secretrecipedb.c1qc6y8aacwe.us-east-1.rds.amazonaws.com';
+$server_url=getenv('SERVER_URL') ?: '';
 ?>
